@@ -1,0 +1,42 @@
+body {
+	min-width: 1220px;
+	line-height: 1.6;
+	color: $base-text-color;
+	background: $body-bg-color;
+}
+
+a {
+	text-decoration: none;
+	transition: all .15s linear;
+}
+
+blockquote,
+figure {
+	margin: 0;
+}
+
+button {
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+p {
+	margin: 1em 0;
+}
+
+svg {
+	fill: currentColor;
+}

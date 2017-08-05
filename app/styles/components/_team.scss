@@ -1,0 +1,47 @@
+.team {
+
+	&_item{
+		margin-bottom: 75px;
+		height: 470px;
+	}
+
+	&_social {
+		width: 224px;
+	}
+
+	&_social-link {
+		float: left;
+		width: 56px;
+		height: 56px;
+		line-height: 56px;
+		color: $red;
+		background: $yellow;
+
+		&:nth-child(n+2) {
+			border-left: 1px solid rgba($red, .5);
+		}
+
+		&:hover {
+			color: $white;
+			background: $red;
+		}
+	}
+
+	&_social-icon {
+		vertical-align: middle;
+		width: 26px;
+		height: 26px;
+	}
+
+	&_figcap {
+		margin-top: 30px;
+	}
+
+	&_name {
+		margin-bottom: 5px;
+	}
+
+	&_career {
+		margin-top: 0;
+	}
+}

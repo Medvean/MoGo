@@ -1,0 +1,93 @@
+.quote-slider {
+	position: relative;
+
+	&_in {
+		position: absolute;
+		top: 50%;
+		left: 305px;
+		margin-top: -75px;
+		width: 830px;
+		height: 150px;
+		overflow: hidden;
+
+		&::after {
+			position: absolute;
+			content: '';
+			left: 0; top: 0; right: 0; bottom: 0;
+		}
+	}
+}
+
+.quote-slide {
+	position: absolute;
+	display: flex;
+	height: 100%;
+	transition: margin 0.8s;
+
+	&_item {
+		position: relative;
+		padding: 0 15px;
+		min-width: 830px;
+		max-width: 830px;
+		height: 100%;
+
+		.quote-text {
+			font: 300 italic 24px/1.5 'Roboto';
+		}
+
+		.quote-author {
+			position: absolute;
+			bottom: 0;
+			padding-left: 70px;
+		}
+
+		.underline::after {
+			right: 100%;
+			top: 50%;
+			margin-top: -1.5px;
+		}
+	}
+}
+
+.quote-slider_nav {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+
+	.prev-btn {
+		position: relative;
+		left: 21px;
+		width: 21px;
+		height: 13px;
+		cursor: pointer;
+
+		&.arrow-ctrl::after {
+			transform: rotate(90deg);
+		}
+	}
+
+	.next-btn {
+		@extend .prev-btn;
+		left: -21px;
+
+		&.arrow-ctrl::after {
+			transform: rotate(270deg);
+		}
+	}
+
+	.arrow-ctrl::after {
+		top: 0;
+		left: 0;
+	}
+
+	.arrow-ctrl:hover::after {
+		background-position: 0 -22px;
+	}
+
+	button:focus {
+		outline-color: transparent;
+	}
+}

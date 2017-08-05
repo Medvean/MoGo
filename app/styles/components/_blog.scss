@@ -1,0 +1,65 @@
+.blog-item {
+	text-align: left;
+	background-color: $white;
+
+	&_img-wrap {
+		position: relative;
+		display: flex;
+		height: 240px;
+	}
+
+	&_date {
+		position: absolute;
+		left: -10px;
+		bottom: 10px;
+		padding: 12px 5px;
+		width: 60px;
+		height: 70px;
+		color: $white;
+		text-align: center;
+		background: $main-color;
+
+		span {
+			display: block;
+		}
+
+		&-number {
+			font: 700 30px/1 'Montserrat';
+		}
+
+		&-month {
+			font: italic 300 15px/1.15 'Roboto';
+		}
+	}
+
+	&_title {
+		margin: 19px 0 11px;
+	}
+
+	&_text {
+		margin: 0;
+		color: $base-text-color;
+	}
+
+	&_link:hover .blog-item_title {
+		text-decoration: underline;
+	}
+
+	&_footer {
+		display: flex;
+
+		&-item {
+			display: flex;
+			align-items: center;
+			margin-right: 20px;
+			line-height: 15px;
+		}
+
+		&-icon {
+			margin-right: 7px;
+			width: 20px;
+			height: 15px;
+			color: $main-color;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.logos {
+	height: 250px;
+	background: $footer-bg-color;
+
+	&_in {
+		padding: 0 12px;
+		line-height: 250px;
+	}
+
+	&_img {
+		display: inline;
+		vertical-align: middle;
+		opacity: .8;
+	}
+}

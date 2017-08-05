@@ -1,0 +1,34 @@
+//- section head
+mixin sectionHead(subtitle, title, description)
+	p.section_subtitle.kaushan-style= subtitle
+	h1.section_title.underline= title
+	if description
+		p.section_descrip= description
+
+//- inputs for slider
+mixin sliderInputs(name, type, number, checked, classInput)
+	- if (!classInput)
+			- classInput = name
+	- for (let n = 1; n <= number; n++)
+			- let check = false
+				if n === checked
+					- check = true
+			input.selector(checked= check id= `${name}-selector-${n}` type= type name= `${name}-selector` class= `${classInput}-selector`)
+
+//- quote slider
+mixin quoteSlider(quoteSliderClass, number, author, text)
+	.quote-slider(class= `${quoteSliderClass}-slider`)
+		if block
+			block
+		.quote-slider_in(class= `${quoteSliderClass}-slider_in`)
+			.quote-slide
+				- for (let i = 0; i < number; i++)
+						blockquote.quote-slide_item
+							q.quote-text= text[i]
+							footer.quote-author.kaushan-style.underline= author[i]
+		nav.quote-slider_nav
+			button.prev-btn.arrow-ctrl(type='button')
+			button.next-btn.arrow-ctrl(type='button')
+
+//- image source name
+- function nameSrc (name) {return name.replace(/\s+/g,'_').toLowerCase();}

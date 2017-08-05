@@ -1,0 +1,17 @@
+.testi
+	.container
+
+		- let names = ['Joshua Eagle', 'Joshua Earth', 'Joshua Earle', 'Joshua Earn'];
+
+		+quoteSlider(
+			'testi', 4,
+			names,
+			['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'
+			]
+		)
+			each val in names
+				.testi-slider_pic-mask
+					img.testi-slider_pic(src= `images/${nameSrc(val)}.jpg` alt= val)

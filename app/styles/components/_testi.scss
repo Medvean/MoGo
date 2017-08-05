@@ -1,0 +1,28 @@
+.testi {
+	padding-bottom: 120px;
+}
+
+.testi-slider {
+	height: 210px;
+
+	&_in::after {
+		@include gradient($testigradient);
+	}
+
+	&_pic-mask {
+		position: absolute;
+		left: 80px;
+		width: 210px;
+		height: 210px;
+		border-radius: 50%;
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity .7s;
+	}
+
+	&_pic {
+		margin: -10px 0 0 -60px;
+		max-width: inherit;
+		max-height: inherit;
+	}
+}

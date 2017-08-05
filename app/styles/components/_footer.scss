@@ -1,0 +1,206 @@
+.footer {
+	background: $footer-bg-color;
+
+	&-in {
+		padding: 68px 0 53px;
+	}
+}
+
+.footer-item {
+	display: flex;
+	flex-flow: column wrap;
+	min-height: 366px;
+
+	&_title {
+		margin-bottom: auto;
+	}
+}
+
+
+/* ------------- footer subscribe ------------- */
+
+.footer-subscribe {
+	width: 480px;
+
+	.footer-logo {
+		align-self: flex-start;
+		margin-bottom: auto;
+		font-size: 46px;
+		line-height: 1;
+		color: #ccc;
+	}
+
+	&_text {
+		margin: 30px 0 40px;
+		padding-right: 20px;
+	}
+
+	.followers {
+		margin: 0;
+		font: 400 14px/1.15 'Montserrat';
+		color: #333;
+
+		&_counter {
+			font-size: 18px;
+			font-weight: 700;
+		}
+	}
+
+	.social {
+		display: flex;
+
+		&_link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 7px;
+			width: 24px;
+			height: 24px;
+			color: $main-color;
+
+			.social_icon {
+				width: 16px;
+				height: 16px;
+				color: inherit;
+				transition: color .15s linear;
+			}
+
+			&:hover .social_icon {
+				color: $main-color-dark;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.subscribe {
+		display: flex;
+		align-items: center;
+		margin-top: 35px;
+		height: 40px;
+		border: none;
+
+		&_input {
+			padding: 0 14px;
+			width: 230px;
+			height: inherit;
+			font: italic 300 15px/24px 'Roboto';
+			color: #333;
+			border: 1px solid #e7e7e7;
+			border-right-color: transparent;
+
+			@include placeholder {
+				color: $grey;
+			}
+		}
+
+		&_btn {
+			width: 150px;
+			height: inherit;
+			font: 700 14px/1 'Montserrat';
+			text-transform: uppercase;
+			color: white;
+			background: $main-color;
+			transition: background-color .15s linear;
+
+			&:hover {
+				background: $main-color-dark;
+			}
+		}
+	}
+}
+
+
+/* ----------------- footer blogs ----------------- */
+
+.footer-blogs {
+	width: 400px;
+}
+
+.footer-blog {
+	display: block;
+	padding-right: 40px;
+	height: 80px;
+
+	&:nth-of-type(n+2) {
+		margin-top: 32px;
+	}
+
+	&_img {
+		float: left;
+		margin-right: 20px;
+		width: 120px;
+		height: inherit;
+	}
+
+	&_title {
+		margin: 0;
+		padding: 18px 0 2px;
+		font: 12px/18px 'Montserrat';
+		color: $title-color;
+		text-transform: uppercase;
+	}
+
+	&_date {
+		margin: 0;
+		font-size: 13px;
+		color: $base-text-color;
+	}
+}
+
+
+/* ----------------- footer instagram ----------------- */
+
+.footer-instagram {
+	position: relative;
+	width: 268px;
+
+	&_preview {
+		display: flex;
+		flex-flow: row wrap;
+		align-content: space-between;
+		justify-content: space-between;
+		height: 268px;
+	}
+
+	&_link {
+		display: block;
+		width: 88px;
+		height: 88px;
+
+		&:hover {
+			border: 1px solid rgba(0,0,0,.5);
+		}
+	}
+
+	.view-more {
+		display: inline-block;
+		margin-top: 12px;
+		font-size: 13px;
+		line-height: 24px;
+		color: $title-color;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+/* ----------------- footer copyright ----------------- */
+
+.footer-copyright {
+	margin-top: -17px;
+	height: 60px;
+	font: 400 14px/1.15 'Montserrat';
+	color: $title-color;
+	text-align: center;
+
+	span {
+		vertical-align: middle;
+		line-height: 60px;
+	}
+
+	&_author {
+		color: $red;
+	}
+}

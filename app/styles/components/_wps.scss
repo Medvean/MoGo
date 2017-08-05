@@ -1,0 +1,62 @@
+.wps {
+	height: 830px;
+	background-image: url(../images/wps_bgrd.jpg);
+	background-position: center -10px;
+	background-attachment: local;
+}
+
+.wps-item {
+	position: relative;
+	float: left;
+	padding: 45px 40px 5px 180px;
+	width: 50%;
+	text-align: left;
+
+	&_photo-wrap {
+		position: absolute;
+		left: 40px;
+		width: 110px;
+		height: 110px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&_photo {
+		max-width: inherit;
+		max-height: inherit;
+
+		&._mix {
+			margin: -8px 0 0 -82px;
+		}
+
+		&._karvounis {
+			margin: -116px 0 0 -70px;
+		}
+
+		&._castillo {
+			margin: -7px 0 0 -75px;
+		}
+
+		&._petrucci {
+			margin: -45px 0 0 -50px;
+		}
+	}
+
+	&_header {
+		position: relative;
+		margin-bottom: 38px;
+
+		&.underline::after {
+			right: 100%;
+			bottom: -18px;
+		}
+	}
+
+	&_name {
+		margin: 10px 0  7px;
+	}
+
+	&_career {
+		margin-top: 0;
+	}
+}

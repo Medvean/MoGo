@@ -1,0 +1,65 @@
+footer.footer#footer
+	.container
+
+		.footer-in
+			.section_items
+
+				//- Subscribe
+				.footer-item.footer-subscribe
+					.logo.footer-logo
+						| M
+						small o
+						| G
+						small o
+
+					p.footer-subscribe_text
+						| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					p.followers
+						span.followers_counter 15K
+						|  followers
+
+					.divider
+
+					.social
+						span.text-italic Follow Us:&nbsp;
+						each val in ['facebook', 'twitter', 'instagram', 'pinterest', 'google-plus', 'youtube', 'dribble', 'tumblr']
+							a.social_link(href='#'): svg.social_icon: use(xlink:href= `${iconSvgPath}#${val}`)
+
+					form.subscribe(action= '/' method= 'post')
+						input.subscribe_input(type= 'email'
+																	placeholder= 'Your Email...'
+																	name= 'subscribe'
+																	required= '')
+						button.subscribe_btn(type= 'submit') Subscribe
+
+				//- Footer Blogs
+				.footer-item.footer-blogs
+					h5.item-title.footer-item_title Blogs
+					mixin footerBlog (footerBlogName, footerBlogTitle, dateTime, dateTimeValue)
+						- for (let i = 0; i < 3; i++)
+								a.footer-blog(href= "#")
+									.footer-blog_img: img(src= `images/${nameSrc(footerBlogName[i])}.jpg` alt= footerBlogName[i])
+									h6.footer-blog_title= footerBlogTitle[i]
+									p.text-italic.footer-blog_date
+										time(datetime= dateTime[i])= dateTimeValue[i]
+
+					+footerBlog(
+						['footer blog one', 'footer blog two', 'footer blog three'],
+						['Lorem ipsum dolor sit amet,  consectetur adipiscing', 'Consectetur adipiscing elit, sed do eiusmod tempor', 'Sed do eiusmod tempor incididunt ut labore'],
+						['2016-01-09', '2016-01-10', '2016-01-11'],
+						['Jan 09, 2016', 'Jan 10, 2016', 'Jan 11, 2016']
+					)
+
+				//- Footer Instagram
+				.footer-item.footer-instagram
+					h5.item-title.footer-item_title Instagram
+					.footer-instagram_preview
+						each val in ['instagram one', 'instagram two', 'instagram three', 'instagram four', 'instagram five', 'instagram six', 'instagram seven', 'instagram eight', 'instagram nine']
+							a.footer-instagram_link(href= '#' title= val): img(src= `images/${nameSrc(val)}.jpg` alt= val)
+					a.text-italic.view-more(href= '#') View more photos
+
+		.divider
+
+		.footer-copyright
+			span &copy;&nbsp;2016 MoGo free PSD template by&nbsp;
+				a.footer-copyright_author(href= '#') Laaqiq

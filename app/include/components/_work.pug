@@ -1,0 +1,29 @@
+section.section.work#work
+	.container
+		+sectionHead(
+			'What we do',
+			'Some of our work',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+		)
+
+	.work_images-wrap
+		.work_images
+
+			mixin work(workContentTitle, workContentText, workImgName)
+				- for (let i = 0; i < 7; i++)
+					figure.work_item
+						.section_img-wrap.work_img-wrap
+							.section_img-over.work_img-over
+								.img-over_content
+									.work_content-sign
+									h5.item-title.work_content-title= workContentTitle[i]
+									p.text-italic.work_content-text= workContentText[i]
+							img.section_img(src= `images/${nameSrc(workImgName[i])}.jpg` alt= workImgName[i])
+
+			+work(
+				['Creatively designed 1', 'Creatively designed 2', 'Creatively designed 3', 'Creatively designed 4', 'Creatively designed 5', 'Creatively designed 6', 'Creatively designed 7'],
+
+				['Lorem ipsum dolor sit 1', 'Lorem ipsum dolor sit 2', 'Lorem ipsum dolor sit 3', 'Lorem ipsum dolor sit 4', 'Lorem ipsum dolor sit 5', 'Lorem ipsum dolor sit 6', 'Lorem ipsum dolor sit 7'],
+
+				['work 1', 'work 2', 'work 3', 'work 4', 'work 5', 'work 6', 'work 7']
+			)

@@ -1,0 +1,20 @@
+.about_item {
+	height: 250px;
+}
+
+.about_img-wrap {
+	display: flex;
+}
+
+.about_content-sign {
+	margin: auto;
+	margin-bottom: 9px;
+	background-image: url(map-get($sprite, svgPath));
+	@include sprite(users);
+}
+
+.about_content-text {
+	font: 700 18px/1.15 'Montserrat';
+	text-transform: uppercase;
+	color: $white;
+}

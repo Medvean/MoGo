@@ -1,0 +1,14 @@
+.design {
+	height: 850px;
+	background-image: url(../images/design_bgrd.jpg);
+	background-position: center -40px;
+
+	&_img-wrap {
+		position: absolute;
+		right: 0;
+		left: 110px;
+		bottom: -91px;
+		margin: auto;
+		width: 636px;
+	}
+}

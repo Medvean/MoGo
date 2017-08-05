@@ -1,0 +1,28 @@
+section.section.team
+	.container
+
+		+sectionHead(
+			'Who we are',
+			'Meet our team',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+		)
+
+		.section_items
+			mixin team(teamName, teamCareer)
+				- for (let i = 0; i < 3; i++)
+						figure.section_item.team_item
+							.section_img-wrap
+								.section_img-over
+									.img-over_content
+										.team_social
+											each val in ['facebook', 'twitter', 'pinterest', 'instagram']
+												a.team_social-link(href= `#${val}`): svg.team_social-icon: use(xlink:href= `${iconSvgPath}#${val}`)
+								img.section_img(src= `images/${nameSrc(teamName[i])}.jpg` alt= teamName[i])
+							figcaption.team_figcap
+								h5.item-title.team_name= teamName[i]
+								p.text-italic.team_career= teamCareer[i]
+
+			+team(
+				['Matthew Dix', 'Christopher Campbell', 'Michael Fertig'],
+				['Graphic Design', 'Branding/UX design', 'Developer']
+			)

@@ -1,0 +1,113 @@
+.wwd {
+	padding-bottom: 120px;
+
+	&_block {
+		height: 380px;
+		text-align: left;
+	}
+
+	&_half {
+		float: left;
+		width: 50%;
+		height: inherit;
+	}
+
+	&_img-wrap {
+		position: relative;
+		width: 570px;
+		height: inherit;
+	}
+
+	&_img {
+		opacity: 0;
+		transition: opacity .15s linear;
+		@include center;
+	}
+
+	&_item-title {
+		position: relative;
+		margin: 0;
+		margin-bottom: 10px;
+		padding: 0 19px 0 60px;
+		height: 60px;
+		line-height: 60px;
+		border: 1px solid $border-color;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			bottom: 0;
+			left: 15px;
+			margin: auto;
+			background-image: url(map-get($sprite, svgPath));
+		}
+	}
+
+	&_drop-down {
+		position: relative;
+		width: 100%;
+		display: inline-block;
+		padding-right: 21px;
+		cursor: pointer;
+
+		&.arrow-ctrl::after {
+			right: 0;
+			margin-top: 24px;
+		}
+	}
+
+	&_text-wrap {
+		display: none;
+		height: 180px;
+		margin-bottom: 10px;
+		padding: 20px;
+		border: 1px solid $border-color;
+		border-top: none;
+	}
+
+	&_text {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+}
+
+
+// Selector Blocks
+
+// class name checked input, number, target path, enumerate type in path
+@include selectorChecked('.wwd', 3, '.wwd_half._right .wwd_text-wrap:nth-of-type', ':nth-of-type') {
+	display: block;
+	overflow: auto;
+}
+
+@include selectorChecked('.wwd', 3, '.wwd_half._right .wwd_item-title:nth-of-type', ':nth-of-type') {
+	margin-bottom: 0;
+}
+
+@include selectorChecked('.wwd', 3, '.wwd_half._right .wwd_item-title:nth-of-type .wwd_drop-down', ':nth-of-type') {
+	cursor: default;
+}
+
+@include selectorChecked('.wwd', 3, '.wwd_half._right .wwd_item-title:nth-of-type .wwd_drop-down.arrow-ctrl::after', ':nth-of-type') {
+	transform: rotate(180deg);
+}
+
+@include selectorChecked('.wwd', 3, '.wwd_half._left .wwd_img:nth-child', ':nth-child') {
+	opacity: 1;
+}
+
+
+// Background Icons
+
+$icon-list: (
+	photography: picture,
+	creativity: equalizer,
+	webdesign: bullseye
+	);
+
+@each $name, $icon-item in $icon-list {
+	.wwd_#{$name}-title::before {
+		@include sprite($icon-item);
+	}
+}

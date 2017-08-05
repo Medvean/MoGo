@@ -1,0 +1,27 @@
+section.section._grdnt.wps
+	.container
+
+		+sectionHead(
+			'Happy Clients',
+			'What people say'
+		)
+
+		mixin wps(name, className, career, text)
+			- for (let i = 0; i < 4; i++)
+				article.wps-item
+					.wps-item_photo-wrap: img.wps-item_photo(class= `_${className[i]}` src=`images/${nameSrc(name[i])}.jpg` alt= className[i])
+					header.wps-item_header.underline
+						h5.item-title.wps-item_name= name[i]
+						p.text-italic.wps-item_career= career[i]
+					p= text[i]
+
+		+wps(
+			['Dewey Mix', 'Nick Karvounis', 'Jaelynn Castillo', 'Mike Petrucci'],
+			['mix', 'karvounis', 'castillo', 'petrucci'],
+			['Graphic Design', 'Branding design', 'UX design', 'Developer'],
+			['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.',
+			'Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+			'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+			'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.'
+			]
+		)

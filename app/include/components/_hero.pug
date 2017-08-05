@@ -1,0 +1,46 @@
+.hero
+	.container
+		//- header
+		header.hero_top
+			.logo
+				| M
+				small o
+				| G
+				small o
+
+			//- top navigation
+			nav.top-nav
+				- let href = ['about', 'service', 'work', 'blog', 'footer'];
+
+				each val, i in ['About', 'Service', 'Work', 'Blog', 'Contact']
+					a.top-nav_link(href= `#${href[i]}`)= val
+
+			//- basket, search request
+			.cart
+				a.cart_link(href= '#')
+			.search
+				span.search_link
+
+
+		//- 		name, type, number, checked, (class)
+		+sliderInputs('hero', 'radio', 4, 1)
+
+		//- slide
+		- href = ['intro', 'work', 'about', 'contacts'];
+		- to 	 = ['MoGo', 'Work', 'Us', 'Map'];
+
+		each val, i in ['Creative Template', 'What we do', 'Who we are', 'Where we are']
+			div.hero-slide
+				p.hero-slide_subtitle= val
+				div.hero-slide_title
+					| Welcome
+					br
+					| to #{to[i]}
+				a.hero-slide_btn(href= `#${href[i]}`) Learn more
+
+		//- slide nav
+		div.hero-slide-nav
+				each val, i in ['Intro', 'Work', 'About', 'Contacts']
+					label(for= `hero-selector-${(i + 1)}` class= 'hero-slide-nav_item')
+						span.hero-slide-nav_number= `0${(i + 1)}`
+						|  #{val}

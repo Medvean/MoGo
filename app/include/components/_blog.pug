@@ -1,0 +1,39 @@
+section.section.blog#blog
+	.container
+
+		+sectionHead(
+			'Our stories',
+			'Latest blog'
+		)
+
+		.section_items
+
+			mixin blog (blogName, dateNumber, dateMonth, blogTitle, blogText, blogViews, blogComments)
+				- for (let i = 0; i < 3; i++)
+						article.section_item.blog-item
+							.blog-item_img-wrap
+								img.section_img(src= `images/${nameSrc(blogName[i])}.jpg` alt= blogName[i])
+								.blog-item_date
+									span.blog-item_date-number= dateNumber[i]
+									span.blog-item_date-month= dateMonth[i]
+							a.blog-item_link(href= "#")
+								h5.item-title.blog-item_title= blogTitle[i]
+								p.blog-item_text= blogText[i]
+							.divider
+							footer.blog-item_footer
+								.blog-item_footer-item
+									svg.blog-item_footer-icon: use(xlink:href= `${iconSvgPath}#view`)
+									span.text-italic.blog-item_footer-views= blogViews[i]
+								.blog-item_footer-item
+									svg.blog-item_footer-icon: use(xlink:href=`${iconSvgPath}#speech-bubble`)
+									span.text-italic.blog-item_footer-comments= blogComments[i]
+
+			+blog(
+				['Amet blog', 'Tempor blog', 'Dolore blog'],
+				['15', '14', '12'],
+				['Jan', 'Feb', 'March'],
+				['Lorem ipsum dolor sit amet', 'Sed do eiusmod tempor', 'Incididunt ut labore et dolore'],
+				['Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'],
+				['542', '992', '1560'],
+				[ '17', '42', '98']
+			)

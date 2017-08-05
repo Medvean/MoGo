@@ -1,0 +1,18 @@
+section.section.about#about
+	.container
+
+		+sectionHead(
+			'What we do',
+			'Story about us',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+		)
+
+		.section_items
+			each val  in ['Super team', 'Dream team', 'Super duper team']
+				.section_item.about_item
+					.section_img-wrap.about_img-wrap
+						.section_img-over
+							.img-over_content
+								.about_content-sign
+								.about_content-text= val
+						img.section_img(src= `images/${nameSrc(val)}.jpg` alt= val)

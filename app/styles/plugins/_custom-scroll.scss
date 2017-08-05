@@ -1,0 +1,17 @@
+.mCS-breeze.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCS-breeze.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background-color: $main-color;
+}
+
+.mCS-breeze.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+		background-color: $main-color;
+	}
+
+.mCS-breeze.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCS-breeze.mCSB_scrollTools .mCSB_draggerRail {
+	width: 5px;
+}
+
+.mCS-breeze.mCSB_scrollTools .mCSB_draggerRail {
+	background-color: whitesmoke;
+}

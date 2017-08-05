@@ -1,0 +1,45 @@
+.services {
+	&_row {
+		padding: 0 28px;
+		overflow: hidden;
+	}
+
+	&_divider {
+		margin: 34px 0;
+	}
+}
+
+.service {
+	position: relative;
+	float: left;
+	padding-left: 60px;
+	width: 340px;
+	text-align: left;
+
+	&::before {
+		position: absolute;
+		content: '';
+		top: 14px;
+		left: 0;
+		background-image: url(map-get($sprite, svgPath));
+	}
+
+	&:nth-child(n+2) {
+		margin-left: 62px;
+	}
+}
+
+$icon-list: (
+	photography: alarm,
+	web-design: line-graph,
+	creativity: computer,
+	seo: book,
+	csshtml: home,
+	digital: image
+);
+
+@each $name, $icon-item in $icon-list {
+	.service-#{$name}::before {
+		@include sprite($icon-item);
+	}
+}

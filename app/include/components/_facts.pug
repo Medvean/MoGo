@@ -1,0 +1,10 @@
+.facts#facts
+	.container
+		ul.facts_list
+			- let dataCount = [42, 123, 15, 99, 24];
+
+			each val, i in ['Web Design Projects', 'Happy clients', 'Award winners', 'Cup of coffee', 'Members']
+				li.facts_item
+					.fact
+						span.fact_number.js-fact-number(data-count= dataCount[i]) 0
+						span.fact_title= val
