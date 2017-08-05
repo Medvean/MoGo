@@ -1,0 +1,1 @@
+"use strict";!function(e){e(window).on("load",function(){e(".wwd_text-wrap").mCustomScrollbar({theme:"breeze"})})}(jQuery);
