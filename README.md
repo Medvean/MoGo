@@ -6,7 +6,7 @@
 - Clone this repo:
 `git clone https://github.com/Medvean/mogo.git`
 
-- Install all dependencies:
+- Navigate to repo's root and install all dependencies:
 `npm run setup`
 
 ## Usage
