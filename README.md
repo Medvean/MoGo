@@ -16,3 +16,5 @@
 
 - Build project from sources:
 `gulp`
+
+## [Demo](https://medvean.github.io/mogo)
